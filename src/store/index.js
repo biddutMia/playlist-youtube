@@ -11,9 +11,7 @@ const store = createStore(
       favorites: favoriteModel,
       recents: recentModel,
     },
-    {
-      storage: "localStorage",
-    }
+    
   )
 );
 

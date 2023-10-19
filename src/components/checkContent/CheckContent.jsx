@@ -1,6 +1,6 @@
 import { Typography } from "@mui/material";
 
-const ContentCheck = ({ content }) => {
+const CheckContent = ({ content }) => {
   return (
     <div>
       <Typography
@@ -13,4 +13,4 @@ const ContentCheck = ({ content }) => {
   );
 };
 
-export default ContentCheck;
+export default CheckContent;

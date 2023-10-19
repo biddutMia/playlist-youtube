@@ -2,7 +2,8 @@ import { Stack, Grid, Typography, Box, Button } from "@mui/material";
 import ItemCard from "../recentAndFavoriteItemCard/RecentAndFavoriteItemCard";
 import { useStoreState, useStoreActions } from "easy-peasy";
 import { Link } from "react-router-dom";
-import ContentCheck from "../contentCheck/contentCheck";
+// import ContentCheck from "../contentCheck/contentCheck";
+import CheckContent from "../checkContent/CheckContent";
 
 const RecentItems = () => {
   const state = useStoreState((state) => state);
@@ -30,7 +31,7 @@ const RecentItems = () => {
       </Box>
 
       {items.length == 0 && (
-        <ContentCheck content="There are no recent items" />
+        <CheckContent content="There are no recent items" />
       )}
 
       <Grid container sx={{ marginBottom: "20px" }} spacing={1}>
