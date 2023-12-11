@@ -9,6 +9,8 @@ import ContentAndVideoPlayer from "../videoPlayer/ContentAndVideoPlayer";
 import VideoPlayer from "../videoPlayer/VideoPlayer";
 // import ContentCheck from "../contentCheck/contentCheck";
 import CheckContent from "../checkContent/CheckContent";
+import style from "../../style.module.css";
+import { useEffect, useState } from "react";
 
 const text = () => {
   return (
@@ -26,11 +28,29 @@ const text = () => {
 };
 
 const Home = () => {
+  const size = { width: "80%", height: "350" };
+
   const playLists = useStoreState((state) => state.playLists);
+  const [state, setState] = useState({ ...size });
+
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      if (window.innerWidth < 400) {
+        setState({
+          ...state,
+          height: "200",
+        });
+      } else {
+        setState({
+          ...size,
+        });
+      }
+    });
+  }, []);
 
   const opts = {
-    height: "350",
-    width: "600",
+    height: state.height,
+    width: state.width,
     playerVars: {
       // https://developers.google.com/youtube/player_parameters
       autoplay: 1,
