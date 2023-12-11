@@ -14,6 +14,7 @@ const text = () => {
   return (
     <div>
       <Typography variant="h4">There are no playlist items</Typography>
+      <Typography>this is a check typhograpy</Typography>
       <Typography
         variant="body1"
         sx={{ fontSize: "20px", marginBottom: "20px" }}
